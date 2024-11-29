@@ -47,8 +47,9 @@ function addSite() {
 
 // Function Display Sites
 function displaySites(sList, term = 0) {
-  var cartoona = "";
+ 
   if (sList.length > 0) {
+    var cartoona = "";
     for (var i = 0; i < sList.length; i++) {
       cartoona += `<div class="col">
       <div class="index ">${i + 1}</div>

@@ -1,6 +1,7 @@
 var siteName = document.getElementById("siteName");
 var siteUrl = document.getElementById("siteUrl");
 var row = document.getElementById("row");
+var availableWebsites=document.getElementById("availableWebsites");
 var addBtn = document.getElementById("addBtn");
 var updateBtn = document.getElementById("updateBtn");
 var siteSearch = document.getElementById("siteSearch");
@@ -47,15 +48,8 @@ function addSite() {
 
 // Function Display Sites
 function displaySites(sList, term = 0) {
-  var tableHeader = `
-  <div class="col">Index</div>
-  <div class="col">Website Name</div>
-  <div class="col">Visite</div>
-  <div class="col">Delete</div>
-  <div class="col">Update</div>
-`;
   if (sList.length > 0) {
-    var cartoona = tableHeader;
+    var cartoona = "";
     for (var i = 0; i < sList.length; i++) {
       cartoona += `<div class="col">
       <div class="index ">${i + 1}</div>
@@ -78,16 +72,20 @@ function displaySites(sList, term = 0) {
     </div>`;
     }
     row.innerHTML = cartoona;
-    row.style.border = "2px solid #edd66c";
+    availableWebsites.style.border = "2px solid #edd66c";
+    document.getElementById("staticRow").classList.remove("d-none");
+
   } 
   else if (sList.length === 0 && term === 0) {
-    row.innerHTML = tableHeader;
+    row.innerHTML = "";
   } else {
     row.innerHTML = `<div class="w-100 not-found text-center mt-5">
     <img src="./images/not-found.png"  alt="notfound image">
     <p class="mt-4">Oops,Not found what you're looking for</p>
   </div>`;
-    row.style.border = "none";
+  availableWebsites.style.border = "none";
+  document.getElementById("staticRow").classList.add("d-none");
+
   }
 }
 

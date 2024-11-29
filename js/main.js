@@ -1,7 +1,8 @@
 var siteName = document.getElementById("siteName");
 var siteUrl = document.getElementById("siteUrl");
-var row = document.getElementById("row");
 var availableWebsites=document.getElementById("availableWebsites");
+var staticRow=document.getElementById("staticRow");
+var row = document.getElementById("row");
 var addBtn = document.getElementById("addBtn");
 var updateBtn = document.getElementById("updateBtn");
 var siteSearch = document.getElementById("siteSearch");
@@ -73,7 +74,7 @@ function displaySites(sList, term = 0) {
     }
     row.innerHTML = cartoona;
     availableWebsites.style.border = "2px solid #edd66c";
-    document.getElementById("staticRow").classList.remove("d-none");
+    staticRow.classList.remove("d-none");
 
   } 
   else if (sList.length === 0 && term === 0) {
@@ -84,7 +85,7 @@ function displaySites(sList, term = 0) {
     <p class="mt-4">Oops,Not found what you're looking for</p>
   </div>`;
   availableWebsites.style.border = "none";
-  document.getElementById("staticRow").classList.add("d-none");
+  staticRow.classList.add("d-none");
 
   }
 }
@@ -250,6 +251,7 @@ function siteUrlValidation() {
 
 function emptyName(){
   if(siteName.value === "" ){
+    siteName.classList.add("is-invalid");
     nameErrorMessage.classList.replace("d-block", "d-none");
     nameEmptyError.classList.replace("d-none", "d-block");
 return false;
@@ -260,10 +262,12 @@ return false;
 }
 function emptyUrl(){
   if(siteUrl.value === "" ){
+    siteUrl.classList.add("is-invalid");
     urlRules.classList.replace("d-block", "d-none");
     urlEmptyError.classList.replace("d-none", "d-block");
 return false;
   }else{
+    
     urlEmptyError.classList.replace("d-block", "d-none");
     return true;
   }

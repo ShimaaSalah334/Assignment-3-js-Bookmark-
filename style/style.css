@@ -1,0 +1,202 @@
+body {
+  color: black;
+}
+:root {
+  --main-color: #fad943;
+  --secondary-color: #edd66c;
+}
+.container-fluid .logo h1 {
+  font-family: "Pacifico", cursive;
+  font-size: 50px;
+  color: #352e28;
+  position: relative;
+}
+.container-fluid .logo h1::after {
+  content: "";
+  position: absolute;
+  background-color: var(--main-color);
+  top: 60%;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+}
+.container-fluid .logo:hover h1::after {
+  top: 30%;
+}
+
+.container-fluid .search input {
+  border: 1px solid #fde98f;
+  background-color: white;
+  outline: none;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+}
+
+.container-fluid .search input:focus {
+  border: 1px solid var(--main-color);
+  outline: none;
+}
+.container-fluid .search input::-webkit-search-cancel-button {
+  appearance: none;
+}
+.container-fluid .search .search-icon {
+  background-color: var(--main-color);
+  color: white;
+  width: 25px;
+  height: 25px;
+  padding: 14px;
+  right: -10px;
+}
+
+.container-md .title h2 {
+  font-size: 25px;
+  font-family: "Righteous", sans-serif;
+  color: var(--secondary-color);
+}
+.container-md .title h2 i {
+  color: var(--main-color);
+}
+.container-md .form-label {
+  font-size: 22px;
+}
+
+.form-control {
+  border: 1px solid #c6c6c3;
+  padding: 0;
+}
+
+.form-control:focus {
+  border: 1px solid var(--secondary-color);
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(250, 217, 67, 0.6);
+}
+.container-md .icon {
+  left: 25px;
+  font-size: 20px;
+}
+
+input:-webkit-autofill,
+#siteSearch:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+}
+
+.container-md button {
+  background-color: var(--secondary-color);
+  border: 0;
+  outline: 0;
+  padding: 10px 25px;
+  font-size: 18px;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+}
+.container-md button:hover {
+  background-color: var(--main-color);
+}
+
+.container-md .websites .row {
+  border: 2px solid #edd66c;
+  font-size: 22px;
+}
+.index,
+.name {
+  color: #352e28;
+  font-size: 20px;
+}
+.container-md .websites .btn {
+  color: white;
+  padding: 5px 15px;
+}
+.container-md .websites .visiteBtn {
+  background-color: #9eb23b;
+}
+.container-md .websites .deleteBtn {
+  background-color: #eb1d36;
+}
+.container-md .websites .updateBtn {
+  background-color: var(--main-color);
+}
+.container-md .websites .visiteBtn:hover {
+  background-color: #8a9e23;
+}
+.container-md .websites .deleteBtn:hover {
+  background-color: #d30820;
+}
+.container-md .websites .updateBtn:hover {
+  background-color: #e9c93a;
+}
+.error-message {
+  color: #dc3545;
+  font-weight: 500;
+}
+.container-md .not-found p {
+  color: #f45444;
+  font-size: 18px;
+  font-weight: 600;
+}
+.container-md .not-found img {
+  width: 18%;
+}
+
+@media screen and (max-width: 576px) {
+  .row .col {
+    padding: 0px 30px 0px 5px;
+  }
+  .container-md .websites .row {
+    font-size: 16px;
+  }
+  .container-md .websites .btn {
+    font-size: 14px;
+    padding: 5px 10px;
+  }
+  .index,
+  .name {
+    font-size: 14px;
+  }
+  .container-md .not-found img {
+    width: 30%;
+  }
+}
+@media screen and (max-width: 370px) {
+  .container-md .websites .row {
+    font-size: 14px;
+  }
+  .row .col {
+    padding: 0px 30px 0px 5px;
+  }
+  .container-md .websites .btn {
+    font-size: 10px;
+    padding: 5px;
+  }
+  .index,
+  .name {
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .container-fluid .search {
+    width: 75%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container-fluid .search {
+    width: 50%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .container-fluid .search {
+    width: 25%;
+  }
+}

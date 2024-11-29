@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookmark</title>
+    <link rel="shortcut icon" href="./images/star.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style/bootstrap.min.css" />
+    <link rel="stylesheet" href="./style/all.min.css" />
+    <link rel="stylesheet" href="./style/style.css" />
+  </head>
+  <body>
+    <div class="container-fluid d-flex flex-column-reverse flex-md-row justify-content-between align-items-center px-5 pt-3 pb-4"
+    >
+      <div class="logo mt-4 mt-md-0"><h1>Bookmarker</h1></div>
+      <div class="search position-relative mt-3">
+        <input
+          type="search"
+          id="siteSearch"
+          class="w-100 rounded-5  px-2 py-1"
+
+        />
+        <div
+          class="search-icon position-absolute d-flex justify-content-center align-items-center top-50 translate-middle rounded-circle"
+        >
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid container-md pb-4">
+      <div class="title text-center mt-5">
+        <h2>
+          <i class="fa-solid fa-bookmark"></i> Bookmark your favorite websites
+          <i class="fa-solid fa-bookmark"></i>
+        </h2>
+      </div>
+      <div class="row g-3  mx-auto mt-4">
+        <div class="col-12">
+          <label for="siteName" class="form-label">Site Name</label>
+          <div class="position-relative">
+            <input
+              type="text"
+              class="form-control rounded-4 py-2 ps-5"
+              id="siteName"
+              placeholder="Site Name"
+              required
+            />
+            <div class="icon position-absolute top-50 translate-middle">
+              <i class="fa-solid fa-pen"></i>
+            </div>
+          </div>
+          <p class="error-message ms-3 mt-2 d-none" id="nameEmptyError">
+           Please Fill Site Name
+          </p>
+          <p class="error-message ms-3 mt-2 d-none" id="nameErrorMessage">
+            Site name must contain at least 3 characters
+          </p>
+          <p class="error-message ms-3 mt-2 d-none" id="nameErrorMessage2">
+            This Site Name already exists. Please write another one.
+          </p>
+        </div>
+        <div class="col-12">
+          <label for="siteUrl" class="form-label">Site URL</label>
+          <div class="position-relative">
+            <input
+              type="url"
+              class="form-control rounded-4 py-2 ps-5"
+              id="siteUrl"
+              placeholder="Site Url"
+              required
+            />
+            <div class="icon position-absolute top-50 translate-middle">
+              <i class="fa-solid fa-link"></i>
+            </div>
+          </div>
+          <p class="error-message ms-3 mt-2 d-none" id="urlEmptyError">
+            Please Fill Site URL
+           </p>
+          <p class="error-message ms-3 mt-2 d-none" id="urlErrorMessage">
+            This Site URL already exists. Please write another one.
+          </p>
+          <div class="error-message ms-3 mt-2 d-none" id="urlRules">
+            Please ensure your URL follows these rules:
+            <p class="mb-0 ms-3 fw-normal">
+              1. Starts with "http://" or "https://"
+              <span class="fw-light d-block mb-2 ms-4"
+                >Example: https://example.com</span
+              >
+            </p>
+            <p class="mb-0 ms-3 fw-normal">
+              2. Includes a valid domain name
+              <span class="d-block ms-4 fw-normal">
+                The domain can include letters, numbers, hyphens (-), and dots (.).</span
+              >
+              <span class="d-block mb-2 ms-4 fw-light"
+                >Examples: example, my-site, sub.example-site.</span
+              >
+            </p>
+            <p class="mb-0 ms-3 fw-normal">
+              3. Avoid special characters in the domain
+              <span class="fw-light d-block mb-2 ms-4">
+                Use only letters, numbers, and hyphens in the domain. No spaces or symbols.
+              </span>
+            </p>
+            <p class="mb-0 ms-3 fw-normal">
+              4. Ends with a valid top-level domain (TLD)
+              <span class="fw-light d-block mb-2 ms-4">
+                The TLD must be at least two characters (e.g., .com, .org).
+              </span>
+            </p>
+            <p class="mb-0 ms-3 fw-normal">
+              5. No extra paths or parameters
+              <span class="d-block ms-4 fw-normal">
+                The URL should not have slashes, query strings, or fragments.
+              </span>
+              <span class="d-block mb-2 ms-4 fw-light">
+                Example: https://example.com (Valid) vs.
+                https://example.com/page (Invalid).
+              </span>
+            </p>
+           
+          </div>
+
+        </div>
+
+        <div class="col-12 text-center my-5">
+          <button
+            class="rounded-4"
+            id="addBtn"
+            type="submit"
+          >
+            Submit
+          </button>
+          <button
+            class="rounded-4 d-none"
+            id="updateBtn"
+            type="submit"
+          >
+            Update
+          </button>
+        </div>
+      </div>
+
+      <div class="websites mt-5">
+        <div
+          class="row row-cols-5 justify-content-center text-center mx-auto gy-4 pb-3"
+          id="row"
+        >
+      </div>
+      </div>
+    </div>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

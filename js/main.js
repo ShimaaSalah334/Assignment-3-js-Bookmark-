@@ -46,12 +46,12 @@ function addSite() {
 }
 
 // Function Display Sites
-function displaySites(sList, term = 0) {
-  var cartoona = `<div class="col">Index</div>
+var cartoona = `<div class="col">Index</div>
   <div class="col">Website Name</div>
   <div class="col">Visite</div>
   <div class="col">Delete</div>
   <div class="col">Update</div>`;
+function displaySites(sList, term = 0) {
   if (sList.length > 0) {
     for (var i = 0; i < sList.length; i++) {
       cartoona += `<div class="col">

@@ -47,8 +47,15 @@ function addSite() {
 
 // Function Display Sites
 function displaySites(sList, term = 0) {
+  var tableHeader = `
+  <div class="col">Index</div>
+  <div class="col">Website Name</div>
+  <div class="col">Visite</div>
+  <div class="col">Delete</div>
+  <div class="col">Update</div>
+`;
   if (sList.length > 0) {
-    var cartoona = "";
+    var cartoona = tableHeader;
     for (var i = 0; i < sList.length; i++) {
       cartoona += `<div class="col">
       <div class="index ">${i + 1}</div>
@@ -74,11 +81,7 @@ function displaySites(sList, term = 0) {
     row.style.border = "2px solid #edd66c";
   } 
   else if (sList.length === 0 && term === 0) {
-    row.innerHTML = `<div class="col">Index</div>
-    <div class="col">Website Name</div>
-    <div class="col">Visite</div>
-    <div class="col">Delete</div>
-    <div class="col">Update</div>`;
+    row.innerHTML = tableHeader;
   } else {
     row.innerHTML = `<div class="w-100 not-found text-center mt-5">
     <img src="./images/not-found.png"  alt="notfound image">

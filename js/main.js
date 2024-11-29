@@ -47,7 +47,6 @@ function addSite() {
 
 // Function Display Sites
 function displaySites(sList, term = 0) {
- 
   if (sList.length > 0) {
     var cartoona = "";
     for (var i = 0; i < sList.length; i++) {
@@ -71,12 +70,7 @@ function displaySites(sList, term = 0) {
       <div onclick="setFormToUpdate(${i})" class="update"><button class="btn updateBtn"><i class="fa-solid fa-arrows-rotate me-0 me-lg-1 "></i> Update</button></div>
     </div>`;
     }
-    row.innerHTML = `<div class="col">Index</div>
-  <div class="col">Website Name</div>
-  <div class="col">Visite</div>
-  <div class="col">Delete</div>
-  <div class="col">Update</div>
-    ${cartoona}`;
+    row.innerHTML = cartoona;
     row.style.border = "2px solid #edd66c";
   } 
   else if (sList.length === 0 && term === 0) {
